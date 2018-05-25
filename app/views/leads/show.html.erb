@@ -1,0 +1,21 @@
+<h1>Showing selected lead</h1>
+<%= render 'layouts/messages' %>
+<p>
+	Name: <%= @lead.name %>
+</p>
+<p>
+	phone number: <%= @lead.phoneno %>
+</p>
+<p>
+	Email: <%= @lead.email %>
+</p>
+<p>
+	Category: <%= @lead.category %>
+</p>
+
+<p>
+	<%= link_to "Back to Lead page", leads_path %>
+</p>
+<p>
+	<%= link_to "Edit", edit_lead_path(@lead) %>
+</p>

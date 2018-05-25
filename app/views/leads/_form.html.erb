@@ -1,0 +1,34 @@
+
+<% if @lead.errors.any? %>
+	<ul>
+		<% @lead.errors.full_messages.each do | msg | %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @lead do |l| %>
+	<p>
+		<%= l.label :name %><br>
+		<%= l.text_field :name %>
+	</p>
+	<p>
+		<%= l.label :phoneno %><br>
+		<%= l.text_field :phoneno %>
+	</p>
+	<p>
+		<%= l.label :email %><br>
+		<%= l.text_field :email %>
+	</p>
+	<p>
+		<%= l.label :category %><br>
+		<%= l.text_field :category %>
+	</p>
+	<p>
+		<%= l.submit %>
+	</p>
+<% end %>
+
+<p>
+	<%= link_to "Back to Lead page", leads_path %>
+</p>
