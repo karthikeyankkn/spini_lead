@@ -23,7 +23,7 @@
 		<td><%= lead.updated_at %></td>
 		<td><%= link_to "Edit", edit_lead_path(lead) %></td>
 		<td><%= link_to "Show", lead_path(lead) %></td>
-		<td><%= link_to 'Delete', lead_path(lead), method: :delete, data: {confirm: "Are you sure?"} %></td>
+		<td><a href=<%="/lead-delete/"+"#{lead.id}"%>>Delete</a></td>
 	</tr>
 	<% end %>
 </table>
