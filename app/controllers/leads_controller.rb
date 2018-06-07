@@ -9,7 +9,9 @@ class LeadsController < ActionController::Base
 
   def create
   	# render plain: params[:lead].inspect
+    # debugger
   	@lead = Lead.new(lead_params)
+    @lead.user = User.first
   	if @lead.save
   		flash[:notice] = "Lead was successfully created"
   		redirect_to lead_path(@lead)
