@@ -2,5 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#welcome'
   resources :leads
-  get  '/lead-delete/:id',  to: "leads#destroy"
+  get '/lead-delete/:id',  to: "leads#destroy"
+  get '/signup', to: "users#new"
+
+  resources :users, except: [:new]
 end
