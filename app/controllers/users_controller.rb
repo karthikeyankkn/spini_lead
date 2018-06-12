@@ -20,12 +20,16 @@ class UsersController < ActionController::Base
 
 	def update
 		@user = User.find(params[:id])
-  	if @user.update(user_params)
-  		flash[:success] = "Your account was successfully updated"
-	  	redirect_to leads_path
-	  else
-	  	render 'edit'	
-  	end
+	  	if @user.update(user_params)
+	  		flash[:success] = "Your account was successfully updated"
+		  	redirect_to leads_path
+		  else
+		  	render 'edit'	
+	  	end
+	end
+
+	def show
+		@user = User.find(params[:id])
 	end
 
 	

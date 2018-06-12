@@ -1,0 +1,10 @@
+<h1>View you user details</h1>
+<h2>Welcome Mr. <%= @user.username %></h2>
+
+<div class="col-md-4 col-md-offset-4 center">
+	<%= gravatar_for @user, size: 150 %>
+</div>
+
+<h2><%= @user.username %>'s Leads list:</h2>
+
+<%= render 'leads/leads', obj:@user.leads %>
