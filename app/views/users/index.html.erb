@@ -1,0 +1,11 @@
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+	<ul>
+		<li>
+			<p><%= link_to gravatar_for(user), user_path(user) %></p>
+			<p><%= link_to user.username, user_path(user) %></p>
+			<p><%= pluralize(user.leads.count, "article") if user.leads %></p>
+		</li>
+	</ul>
+<% end %>
