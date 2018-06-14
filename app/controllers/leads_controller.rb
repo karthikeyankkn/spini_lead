@@ -1,6 +1,6 @@
 class LeadsController < ActionController::Base
   def index
-  	@leads = Lead.all
+  	@leads = Lead.paginate(page: params[:page], per_page: 10)
   end
 
   def new
