@@ -1,0 +1,15 @@
+<h1>Showing selected lead</h1>
+<p>
+	Name: <%= @lead.name %>
+</p>
+<p>
+	phone number: <%= @lead.phoneno %>
+</p>
+<p>
+	Email: <%= @lead.email %>
+</p>
+<p>
+	Category: <%= @lead.category %>
+</p>
+
+Click here, <%= link_to "profile", @lead %>

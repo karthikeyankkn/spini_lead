@@ -14,6 +14,9 @@ class LeadsController < ActionController::Base
     @lead.user = User.first
 
   	if @lead.save
+
+      UserMailer.registration_confirmation(@lead).deliver_now
+
   		flash[:notice] = "Lead was successfully created"
   		redirect_to lead_path(@lead)
   	else
